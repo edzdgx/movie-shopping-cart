@@ -1,0 +1,11 @@
+<script language="JAVASCRIPT">
+    function getUrlVars() {
+        var vars = {};
+        var parts = window.location.href.replace(/[?&]+([^=&]+)=([^&]*)/gi, function(m,key,value) {
+            vars[key] = value;
+        });
+        return vars;
+    }
+    var gerne_name = getUrlVars()["gerne_name"];
+    document.write(gerne_name);
+</script>

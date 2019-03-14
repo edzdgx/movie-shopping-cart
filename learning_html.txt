@@ -1,0 +1,19 @@
+<html>
+    <head>
+        <title></title>
+    <head>
+
+    <body bgvalue = "lightblue">
+        <h1><font color = "red">My Title</font></h1>
+        <ul>
+            <li></li>
+        </ul>
+        unordered list with list items being displayed with bullet points
+
+        <br />
+        break row
+
+        <hr />
+        horizontal row
+    </body>
+</html>

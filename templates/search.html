@@ -1,0 +1,101 @@
+<html>
+    <head>
+        <title>Search Movie</title>
+    </head>
+
+    <body>
+
+        <center><h1 color="blue">Search Page</h1></center>
+        {% if non_filled %}
+            <h2>Error: at least one field must be entered<br></h2>
+        {% elif no_match %}
+            <h2>No movies match your search<br></h2>
+        {% endif %}
+
+
+
+        <hr />
+        {% if movies %}
+        <table style="border: 2px solid black; border-collapse: collapse;">
+            <tr>
+                <th>Title</th>
+                <th>Director</th>
+                <th>Actor 1</th>
+                <th>Actor 2</th>
+                <th>Year</th>
+                <th>Duration</th>
+                <th>Rent</th>
+                <th>Purchase</th>
+            </tr>
+            {% for item in movies %}
+                <tr>
+                    <td>{{item.title}}</td>
+                    <td>{{item.director}}</td>
+                    <td>{{item.actor1}}</td>
+                    <td>{{item.actor2}}</td>
+                    <td>{{item.year}}</td>
+                    <td>{{item.duration}} mins</td>
+                    <td><div class="container">
+                            <form method="post">
+                                <input type="submit" value="${{item.rent}}">
+                            </form>
+                        </div></td>
+                    <td>
+                        <div class="container">
+                            <form method="post">
+                                <input type="submit" value="${{item.buy}}">
+                            </form>
+                        </div>
+                    </td>
+                </tr>
+
+
+
+            {% endfor %}
+        </table>
+        {% endif %}
+
+
+        <div class="container">
+            <form method = "post">
+                <label for="title">Title:</label>
+                <input name="title" type="text" value=""><br />
+
+                <label for="director">Director:</label>
+                <input name="director" type="text" value=""><br />
+
+                <label for="actor1">Main Actor:</label>
+                <input name="actor1" type="text" value=""><br />
+
+                <label for="year">Year of Release:</label>
+                <input name="year" type="text" value=""><br />
+
+                <input name="" type="submit" value="Search">
+            </form>
+        </div>
+
+        <hr />
+
+        <div class="container">
+            <form>Gerne:<br />
+                {% if gerne_name == "" %}
+                    <i><strong>Error: "Gerne" field must be filled in<br /></strong></i>
+                {% endif %}
+                <input name="gerne_name" value="{{ gerne_name }}">
+                <input type="submit" value="Switch">
+            </form>
+        </div>
+
+        <center>
+            <a href="/">Return to Main Page</a>
+        </center>
+
+    </body>
+</html>
+
+
+
+
+
+
+

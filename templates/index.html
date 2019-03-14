@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Index Page</title>
+    <!-- [START css] -->
+    <link type="text/css" rel="stylesheet" href="/bootstrap/css/bootstrap.css">
+    <link type="text/css" rel="stylesheet" href="/bootstrap/css/bootstrap-responsive.css">
+    <!-- [END css] -->
+    <style type="text/css">
+      body {
+        padding-top: 40px;
+        padding-bottom: 40px;
+        background-color: #f5f5f5;
+      }
+      blockquote {
+        margin-bottom: 10px;
+        border-left-color: #bbb;
+      }
+      form {
+        margin-top: 10px;
+      }
+      .form-signin input[type="text"] {
+        font-size: 16px;
+        height: auto;
+        margin-bottom: 15px;
+        padding: 7px 9px;
+      }
+      .row {
+        margin-left: 0px;
+        margin-top: 10px;
+        overflow: scroll;
+      }
+    </style>
+  </head>
+
+  <body>
+    <center><h1>Edward Zhou's Movie Database App</h1></center>
+<!--     {% for item in movies %}
+        {{item.title}}, {{item.director}}, {{item.actor1}}, {{item.actor2}}, {{item.year}}, {{item.duration}}, {{item.gerne}} <br>
+    {% endfor %} -->
+    <hr />
+    <ul>
+      <li><a href="browse?gerne_name={{action}}">Browse action movies</a></li>
+      <li><a href="browse?gerne_name={{animated}}">Browse animated movies</a></li>
+      <li><a href="browse?gerne_name={{comedy}}">Browse comedies</a></li>
+      <li><a href="browse?gerne_name={{documentary}}">Browse documentaries</a></li>
+      <li><a href="browse?gerne_name={{drama}}">Browse dramas</a></li>
+      <li><a href="browse?gerne_name={{horror}}">Browse horror movies</a></li>
+      <li><a href="browse?gerne_name={{musical}}">Browse musicals</a></li>
+      <li><a href="browse?gerne_name={{scifi}}">Browse sci-fi movies</a></li>
+      <hr />
+      <li><a href="search">Search for movies</a></li>
+      <li><a href="enter">Enter new movie info</a></li>
+      <hr />
+      <li><a href="cart">View Shopping Cart</a></li>
+    </ul>
+  </body>
+</html>

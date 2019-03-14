@@ -1,0 +1,67 @@
+<html>
+    <head>
+        <title>Enter New Movie</title>
+    </head>
+
+    <body>
+
+        <center><h1>Enter New Movie Information</h1></center>
+        {% if not all_filled %}
+            <h2>Error: all fields must be filled in<br></h2>
+        {% else %}
+            <h2> </h2>
+        {% endif %}
+        <div class="container">
+            <form method = "post">
+                <label for="title">Title:</label>
+                <input name="title" type="text" value=""><br />
+
+                <label for="director">Director:</label>
+                <input name="director" type="text" value=""><br />
+
+                <label for="actor1">Main Actor 1:</label>
+                <input name="actor1" type="text" value=""><br />
+
+                <label for="actor2">Main Actor 2:</label>
+                <input name="actor2" type="text" value=""><br />
+
+                <label for="year">Year of Release:</label>
+                <input name="year" type="text" value=""><br />
+
+                <label for="duration">Duration (in minutes):</label>
+                <input name="duration" type="text" value=""><br />
+
+                <label for="rent price">Rent Price:</label>
+                <input name="rent" type="text" value=""><br />
+
+                <label for="buy price">Purchase Price:</label>
+                <input name="buy" type="text" value=""><br />
+
+                <button type="submit">Enter movie info</button>
+            </form>
+        </div>
+
+        <hr />
+        <div class="container">
+            <form>Gerne:<br />
+                {% if gerne_name == "" %}
+                    <i><strong>Error: "Gerne" field must be filled in<br /></strong></i>
+                {% endif %}
+                <input name="gerne_name" value="{{ gerne_name }}">
+                <input type="submit" value="Switch">
+            </form>
+        </div>
+
+        <center>
+            <a href="/">Return to Main Page</a>
+        </center>
+
+    </body>
+</html>
+
+
+
+
+
+
+

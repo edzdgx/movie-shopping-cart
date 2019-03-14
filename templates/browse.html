@@ -1,0 +1,57 @@
+<html>
+    <head>
+        <title>browsing {{gerne_name}}</title>
+    </head>
+
+    <body>
+        <center><h1>Current {{gerne_name}} movies in database</h1></center>
+
+        <hr />
+        <table style="border: 2px solid black; border-collapse: collapse;">
+            <tr>
+                <th>Title</th>
+                <th>Director</th>
+                <th>Actor 1</th>
+                <th>Actor 2</th>
+                <th>Year</th>
+                <th>Duration</th>
+                <th>Rent</th>
+                <th>Purchase</th>
+            </tr>
+            {% for item in movies %}
+                <tr>
+                    <td>{{item.title}}</td>
+                    <td>{{item.director}}</td>
+                    <td>{{item.actor1}}</td>
+                    <td>{{item.actor2}}</td>
+                    <td>{{item.year}}</td>
+                    <td>{{item.duration}} mins</td>
+                    <td><div class="container">
+                            <form action="browse?title={{item.title}}&isrent=True" method="post">
+                                <input type="submit" value="${{item.rent}}">
+                            </form>
+                        </div></td>
+                    <td>
+                        <div class="container">
+                            <form action="browse?title={{item.title}}&isbought=True" method="post">
+                                <input type="submit" value="${{item.buy}}">
+                            </form>
+                        </div>
+                    </td>
+                </tr>
+
+
+
+            {% endfor %}
+        </table>
+
+        <center>
+            <a href="/">Return to Main Page</a>
+        </center>
+
+    </body>
+</html>
+
+
+
+

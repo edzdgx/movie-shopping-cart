@@ -1,0 +1,62 @@
+<html>
+    <head>
+        <title>Shopping Cart</title>
+    </head>
+
+    <body>
+        <center><h1>Shopping Cart</h1></center>
+
+        <hr />
+        <table style="border: 2px solid black; border-collapse: collapse;">
+            <tr>
+                <th>Title</th>
+                <th>Director</th>
+                <th>Actor 1</th>
+                <th>Actor 2</th>
+                <th>Year</th>
+                <th>Duration</th>
+                <th>Type</th>
+                <th>Price</th>
+                <th></th>
+            </tr>
+            {% for item in movies %}
+
+                {% if item.isrent or item.isbought %}
+                    <tr>
+                        <td>{{item.title}}</td>
+                        <td>{{item.director}}</td>
+                        <td>{{item.actor1}}</td>
+                        <td>{{item.actor2}}</td>
+                        <td>{{item.year}}</td>
+                        <td>{{item.duration}} mins</td>
+
+                        {% if item.isrent %}
+                            <td>rent</td>
+                            <td>${{item.rent}}</td>
+                        {% else %}
+                            <td>buy</td>
+                            <td>${{item.buy}}</td>
+                        {% endif %}
+
+
+                        <td>
+                            <form action="/cart?title={{item.title}}" method="post">
+                                <input type="hidden" name="_method" value="DELETE">
+                                <input type="submit" value="remove" class="btn btn-danger">
+                            </form>
+                        </td>
+                    </tr>
+                {% endif %}
+            {% endfor %}
+        </table>
+
+        <center>
+            <a href="/">Return to Main Page</a>
+        </center>
+
+    </body>
+</html>
+
+
+
+
